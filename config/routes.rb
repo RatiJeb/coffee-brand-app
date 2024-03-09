@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   get 'health/index'
   get 'coffee/index'
   get 'coffee/show'
-  root 'health/index'
+  root 'health#index'
 end
