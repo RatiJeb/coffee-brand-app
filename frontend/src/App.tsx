@@ -1,6 +1,9 @@
 import './App.css'
+import Navbar from "./components/navbar/NavBar.tsx";
 
 function App() {
-  return <h1 className="hello-world">Hello, World!</h1>
+  return <>
+    <Navbar />
+  </>
 }
 export default App
