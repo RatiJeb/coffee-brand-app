@@ -2,3 +2,10 @@
   margin: 0;
   padding: 0;
 }
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

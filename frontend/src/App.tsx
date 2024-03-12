@@ -1,9 +1,11 @@
 import './App.css'
-import Navbar from "./components/navbar/NavBar.tsx";
+import Footer from "./components/Footer"
+import Navbar from "./components/Navbar"
 
 function App() {
-  return <>
+  return <div className='main-div'>
     <Navbar />
-  </>
+    <Footer />
+  </div>
 }
 export default App
