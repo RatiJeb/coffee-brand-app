@@ -6,7 +6,7 @@ class CoffeeController < ApplicationController
 
   def show
     @result = CoffeeType.includes(:coffee_ingredients)
-                        .find_by(id: @params[:id])
+                        .find_by(id: params[:id])
     render json: @result.as_json
   end
 end
