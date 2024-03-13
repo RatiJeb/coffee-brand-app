@@ -5,6 +5,7 @@
 # string      :image_url
 # integer     :calories
 # string      :description,     limit: 255
+# numeric     :price
 class CoffeeType < ApplicationRecord
   has_many :coffee_type_ingredients, dependent: nil
   has_many :coffee_ingredients, through: :coffee_type_ingredients

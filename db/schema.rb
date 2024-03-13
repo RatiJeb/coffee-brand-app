@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,30 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_240_309_044_326) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_09_044326) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'coffee_ingredients', force: :cascade do |t|
-    t.string 'name'
+  create_table "coffee_ingredients", force: :cascade do |t|
+    t.string "name", limit: 255
   end
 
-  create_table 'coffee_type_ingredients', force: :cascade do |t|
-    t.bigint 'coffee_type_id'
-    t.bigint 'coffee_ingredient_id'
-    t.index ['coffee_ingredient_id'], name: 'index_coffee_type_ingredients_on_coffee_ingredient_id'
-    t.index ['coffee_type_id'], name: 'index_coffee_type_ingredients_on_coffee_type_id'
+  create_table "coffee_type_ingredients", force: :cascade do |t|
+    t.bigint "coffee_type_id"
+    t.bigint "coffee_ingredient_id"
+    t.index ["coffee_ingredient_id"], name: "index_coffee_type_ingredients_on_coffee_ingredient_id"
+    t.index ["coffee_type_id"], name: "index_coffee_type_ingredients_on_coffee_type_id"
   end
 
-  create_table 'coffee_types', force: :cascade do |t|
-    t.string 'name', limit: 50
-    t.string 'image_url'
-    t.integer 'calories'
-    t.decimal 'price', precision: 5, scale: 2
-    t.integer 'discounted_percent'
-    t.string 'description', limit: 255
+  create_table "coffee_types", force: :cascade do |t|
+    t.string "name", limit: 50
+    t.string "image_url"
+    t.integer "calories"
+    t.decimal "price", precision: 5, scale: 2
+    t.integer "discounted_percent"
+    t.string "description", limit: 255
   end
 
-  add_foreign_key 'coffee_type_ingredients', 'coffee_ingredients'
-  add_foreign_key 'coffee_type_ingredients', 'coffee_types'
+  add_foreign_key "coffee_type_ingredients", "coffee_ingredients"
+  add_foreign_key "coffee_type_ingredients", "coffee_types"
 end
