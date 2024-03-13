@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Coffee Controller
 class CoffeeController < ApplicationController
   def index
     @result = CoffeeType.includes(:coffee_ingredients).all

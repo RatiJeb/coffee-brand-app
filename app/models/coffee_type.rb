@@ -6,8 +6,8 @@
 # integer     :calories
 # string      :description,     limit: 255
 class CoffeeType < ApplicationRecord
-  has_many :coffee_type_ingredients, foreign_key: :coffee_type_id
+  has_many :coffee_type_ingredients, dependent: nil
   has_many :coffee_ingredients, through: :coffee_type_ingredients
 
-  validates_presence_of :name, :calories, :price, :image_url
+  validates :name, :calories, :price, :image_url, presence: true
 end
