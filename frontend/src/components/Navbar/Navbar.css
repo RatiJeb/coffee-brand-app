@@ -16,22 +16,22 @@
   background-color: #fff6e5;
 }
 
-.menu-items{
+.navbar-items{
   display: flex;
   gap: 30px;
 }
 
-.menu-items a:link, .menu-items a:visited {
+.navbar-items a:link, .navbar-items a:visited {
   color: #fafaf4;
   text-decoration: none;
   font-size: 25px;
   font-weight: 500;
 }
 
-.menu-items a:hover {
+.navbar-items a:hover {
   color: #fafaf4cc;
 }
 
-.menu-items a:active {
+.navbar-items a:active {
   color: #fafaf499;
 }

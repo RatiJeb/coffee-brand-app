@@ -1,0 +1,13 @@
+.menu-item {
+  width: 250px;
+  height: 400px;
+  background-color: #345830;
+  border: #4a7856 solid 5px;
+  border-radius: 30px;
+  color: #fafaf4;
+  font-size: 40px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

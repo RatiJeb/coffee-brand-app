@@ -4,7 +4,7 @@ function Navbar() {
     <div className='green-line'/>
     <nav className='navbar'>
       <img src="./coffee-logo.png" alt="coffee logo" className='nav-logo'/>
-      <div className="menu-items">
+      <div className="navbar-items">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
