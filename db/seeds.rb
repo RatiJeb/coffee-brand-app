@@ -3,12 +3,12 @@
 CoffeeIngredient.create(name: :caffeine)
 CoffeeIngredient.create(name: :espresso)
 CoffeeIngredient.create(name: :milk)
-CoffeeIngredient.create(name: :steamed_milk)
-CoffeeIngredient.create(name: :milk_foam)
+CoffeeIngredient.create(name: 'steamed milk')
+CoffeeIngredient.create(name: 'milk foam')
 CoffeeIngredient.create(name: :water)
 CoffeeIngredient.create(name: :ice)
-CoffeeIngredient.create(name: :caramel_sauce)
-CoffeeIngredient.create(name: :vanilla_syrup)
+CoffeeIngredient.create(name: 'caramel sauce')
+CoffeeIngredient.create(name: 'vanilla syrup')
 
 type = CoffeeType.new(name: :espresso,
                       calories: 3,
@@ -29,8 +29,8 @@ type = CoffeeType.new(name: :cappuccino,
                       image_url: 'https://foodzilla.io/dist/images/does-cappuccino-have-caffeine-in-it.jpg')
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :caffeine).id)
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :espresso).id)
-type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :steamed_milk).id)
-type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :milk_foam).id)
+type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: 'steamed milk').id)
+type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: 'milk foam').id)
 type.save
 
 type = CoffeeType.new(name: :iced_latte,
@@ -42,8 +42,8 @@ type = CoffeeType.new(name: :iced_latte,
                       image_url: 'https://alidasfood.com/wp-content/uploads/2021/09/Cafe-Latte-Gelado-45o.jpg')
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :caffeine).id)
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :espresso).id)
-type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :steamed_milk).id)
-type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :vanilla_syrup).id)
+type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: 'steamed milk').id)
+type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: 'vanilla syrup').id)
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :ice).id)
 type.save
 
@@ -58,7 +58,7 @@ type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :water).id)
 type.save
 
-type = CoffeeType.new(name: :caramel_macchiato,
+type = CoffeeType.new(name: 'caramel macchiato',
                       calories: 300,
                       price: 6,
                       description: 'A decadent espresso-based drink featuring steamed milk, vanilla syrup, and a drizzle
@@ -66,7 +66,7 @@ type = CoffeeType.new(name: :caramel_macchiato,
                       image_url: 'https://thelittlestcrumb.com/wp-content/uploads/salted-caramel-macchiato-6.jpg')
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :caffeine).id)
 type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :espresso).id)
-type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :steamed_milk).id)
-type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :caramel_sauce).id)
-type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: :vanilla_syrup).id)
+type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: 'steamed milk').id)
+type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: 'caramel sauce').id)
+type.coffee_type_ingredients.new(coffee_ingredient_id: CoffeeIngredient.find_by(name: 'vanilla syrup').id)
 type.save

@@ -1,11 +1,26 @@
 import "./Menu.css"
 import MenuItem from "../MenuItem";
+import {useEffect, useState} from "react";
+import axios from 'axios';
+
 function Menu() {
+  const[coffee, setCoffee] = useState([{
+    id: 0n,
+    name: "",
+    image_url: "",
+    calories: 0,
+    price: 0.0,
+    discounted_percent: null,
+    description: ""
+  }])
+  useEffect(() => {
+    axios.get(`http://localhost:5000/coffee`)
+      .then(res => {
+        setCoffee(res.data);
+      })
+  }, [])
   return <div className='main-menu'>
-    <MenuItem name="1"/>
-    <MenuItem name="2"/>
-    <MenuItem name="3"/>
-    <MenuItem name="4"/>
+    {coffee.map(c => <MenuItem key={c.id} coffee={c}/>)}
   </div>
 }
 
