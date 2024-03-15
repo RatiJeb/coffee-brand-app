@@ -11,13 +11,15 @@ function MenuItem(props: {
     description: string
   }
 }) {
-  const {name, image_url, calories, price, discounted_percent, description} = props.coffee
+  const {name, image_url, price} = props.coffee
   return <div className='menu-item' style={{backgroundImage: `url(${image_url})`}}>
-    <h1 key={name}>{name}</h1>
-    {/*<br/>*/}
-    {/*<p>calories: {calories}</p>*/}
-    <p>Price: <u>${price}</u></p>
+    <button className='info-btn'>i</button>
+    <div>
+      <h1>{name}</h1>
+      <p>Price: <u>${price}</u></p>
+    </div>
   </div>
 }
+
 
 export default MenuItem
