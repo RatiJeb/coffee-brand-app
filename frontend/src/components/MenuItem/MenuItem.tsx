@@ -7,11 +7,12 @@ function MenuItem(props: {
     image_url: string,
     calories: number,
     price: number,
+    new_price: undefined | null | number,
     discounted_percent: null | number,
     description: string
   }
 }) {
-  const {name, image_url, price, description, discounted_percent} = props.coffee
+  const {name, image_url, price, description, discounted_percent, new_price} = props.coffee
 
   const [hovering, setHovering] = useState(false)
 
@@ -24,10 +25,11 @@ function MenuItem(props: {
         </>
         : <>
         <>
+        {discounted_percent && <p style={{backgroundColor: "#fc6666", alignSelf:"end", position: "absolute", top: "0%", right: "0%", padding: "5px", borderRadius: "0 25px 0 0"}}>{`${discounted_percent}% off`}</p>}
           <h1>{name}</h1>
-          <p>Price: <u>${price}</u>{discounted_percent && <s>${discounted_percent}</s>}</p>
+          <p>Price: {discounted_percent && <s>${new_price}</s>} <u>${price}</u></p>
         </>
-      </>
+        </>
 }
   </div>
 }

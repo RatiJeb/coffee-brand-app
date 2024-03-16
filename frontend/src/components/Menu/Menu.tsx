@@ -11,6 +11,7 @@ function Menu() {
     calories: 0,
     price: 0.0,
     discounted_percent: null,
+    new_price: null,
     description: ""
   }])
   useEffect(() => {
