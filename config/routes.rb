@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   root 'health#index'
 
-  get 'health/index'
+  resources :health, only: :index
+  resources :cart, only: :index
   resources :coffee, only: %i[index show]
 end

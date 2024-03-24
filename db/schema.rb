@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_09_044326) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_24_034805) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: :cascade do |t|
+    t.bigint "coffee_type_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_type_id"], name: "index_cart_items_on_coffee_type_id"
+  end
 
   create_table "coffee_ingredients", force: :cascade do |t|
     t.string "name", limit: 255
@@ -34,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_044326) do
     t.string "description", limit: 255
   end
 
+  add_foreign_key "cart_items", "coffee_types"
   add_foreign_key "coffee_type_ingredients", "coffee_ingredients"
   add_foreign_key "coffee_type_ingredients", "coffee_types"
 end
